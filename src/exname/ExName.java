@@ -1,4 +1,4 @@
-package extname;
+package exname;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -16,7 +16,7 @@ import javax.swing.JOptionPane;
  *
  * @author cedal
  */
-public class ExtName {
+public class ExName {
 
     private static JFileChooser jfc;
 
