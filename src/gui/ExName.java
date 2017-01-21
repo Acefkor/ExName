@@ -56,9 +56,9 @@ public class ExName extends javax.swing.JFrame implements ActionListener, Proper
     @Override
     public void actionPerformed(ActionEvent e) {
         if (dirPath.getText().equals("")) {
-            JOptionPane.showMessageDialog(this, "Must select a directory to scan files name's", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Must select a directory to scan file's names", "Error", JOptionPane.ERROR_MESSAGE);
         } else if (filePath.getText().equals("")) {
-            JOptionPane.showMessageDialog(this, "Must select a path to save a file with a list of files name's", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Must select a path to save a file with a list of file's names", "Error", JOptionPane.ERROR_MESSAGE);
         } else {
             resultTxtA.setText("");
             startBtn.setEnabled(false);
@@ -125,7 +125,7 @@ public class ExName extends javax.swing.JFrame implements ActionListener, Proper
     public ExName() {
         try {
             initComponents();
-            Image img = ImageIO.read(this.getClass().getResource("../images/ExName.png"));
+            Image img = ImageIO.read(getClass().getResource("/images/ExName.png"));
             this.setIconImage(img);
         } catch (IOException ex) {
             Logger.getLogger(ExName.class.getName()).log(Level.SEVERE, null, ex);
@@ -155,9 +155,9 @@ public class ExName extends javax.swing.JFrame implements ActionListener, Proper
         progBar = new javax.swing.JProgressBar(0,100);
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        exitMenu = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        aboutMenu = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("ExName");
@@ -197,26 +197,26 @@ public class ExName extends javax.swing.JFrame implements ActionListener, Proper
 
         jMenu1.setText("File");
 
-        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem2.setText("Exit");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        exitMenu.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.CTRL_MASK));
+        exitMenu.setText("Exit");
+        exitMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                exitMenuActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem2);
+        jMenu1.add(exitMenu);
 
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Help");
 
-        jMenuItem1.setText("About...");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        aboutMenu.setText("About...");
+        aboutMenu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                aboutMenuActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem1);
+        jMenu2.add(aboutMenu);
 
         jMenuBar1.add(jMenu2);
 
@@ -311,11 +311,11 @@ public class ExName extends javax.swing.JFrame implements ActionListener, Proper
         }
     }//GEN-LAST:event_setBtnActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    private void exitMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuActionPerformed
         System.exit(0);
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    }//GEN-LAST:event_exitMenuActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void aboutMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_aboutMenuActionPerformed
         final JDialog dialog = new JDialog(this, "About");
         JLabel label = new JLabel("<html><p align=left>"
                 + "Simple Java Application for extracting.<br>"
@@ -351,7 +351,7 @@ public class ExName extends javax.swing.JFrame implements ActionListener, Proper
         dialog.setLocationRelativeTo(this);
         dialog.setModal(true);
         dialog.setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_aboutMenuActionPerformed
 
     @SuppressWarnings({"null", "UnusedAssignment"})
     private void createFile() {
@@ -408,8 +408,10 @@ public class ExName extends javax.swing.JFrame implements ActionListener, Proper
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem aboutMenu;
     private javax.swing.JButton chooseBtn;
     private javax.swing.JLabel dirPath;
+    private javax.swing.JMenuItem exitMenu;
     private javax.swing.JLabel filePath;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -417,8 +419,6 @@ public class ExName extends javax.swing.JFrame implements ActionListener, Proper
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JFileChooser jfc;
     private javax.swing.JProgressBar progBar;
